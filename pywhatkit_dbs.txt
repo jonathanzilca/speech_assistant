@@ -1,0 +1,66 @@
+--------------------
+Date: 27:11:2020
+Time: 21:56
+Phone number: +972503345739
+Message: you are f****** b****
+--------------------
+Date: 27:11:2020
+Time: 21:59
+Phone number: +972503345739
+Message: you are a f****** genius
+--------------------
+Date: 28:11:2020
+Time: 12:19
+Phone number: +972526003830
+Message: i'm writing bison
+--------------------
+Date: 28:11:2020
+Time: 12:35
+Phone number: +972526003830
+Message: it is working
+--------------------
+Date: 30:11:2020
+Time: 12:21
+Phone number: +972503345739
+Message: i am using python to send that message
+--------------------
+Date: 30:11:2020
+Time: 12:26
+Phone number: +972503345739
+Message: meow
+--------------------
+Date: 30:11:2020
+Time: 12:29
+Phone number: +972503345739
+Message: send a message
+--------------------
+Date: 9:12:2020
+Time: 22:30
+Phone number: +972506506033
+Message: you can go f*** yourself
+--------------------
+Date: 9:12:2020
+Time: 22:31
+Phone number: +972506506033
+Message: let's do it again
+--------------------
+Date: 28:3:2021
+Time: 22:46
+Phone number: +972586245315
+Message: you're a dick
+--------------------
+Date: 28:3:2021
+Time: 22:51
+Phone number: +972506506033
+Message: let's say you have a nice day
+--------------------
+Date: 29:3:2021
+Time: 14:54
+Phone number: +972503345739
+Message: you are the best
+--------------------
+Date: 17:7:2021
+Time: 21:44
+Phone number: +972503345739
+Message: you're the best
+--------------------
