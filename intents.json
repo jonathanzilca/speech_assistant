@@ -1,0 +1,36 @@
+{"intents": [
+
+    {"tag": "goodbye",
+     "patterns": ["bye", "goodbye", "nighty night", "that's all for today", "shut down", "stop", "that's enough",
+                  "see you next time", "not now", "i have to go", "see you soon", "shutdown"],
+     "responses": ["Hope to see you soon Sir.", "I look forward to our next meeting Sir",
+                   "It was nice to see you again Sir."
+         , "Always nice to hear Sir.", "Have a nice day Sir.", "If you need anything, I am always here for you Sir."]},
+
+    {"tag": "caring",
+     "patterns": ["how are you", "how do you feel", "how you doing", "how are you doing", "how do you do"],
+     "responses": ["Somewhere between better and best.", "Much better now that you are with me.",
+                   "My lawyer says I don’t have to answer that question.",
+                   "Like you, but better.", "I'd say I'm a 10 out of 10.",
+                   "If I were doing any better, I'd hire you to enjoy it with me.",
+                   "If I were any better, I'd be illegal."]},
+
+    {"tag": "compliments",
+     "patterns": ["you are funny", "you're funny", "you are so funny", "you're so funny", "you are awesome",
+                  "you're awesome", "you are adorable", "you're adorable", "you are the best"],
+     "responses": ["Ha ha ha, thank you. I working on that."]},
+
+    {"tag": "telling_jokes",
+     "patterns": ["tell me a joke", "tell a joke", "tell me another", "cheer me up", "give me a joke"],
+     "responses": [""]},
+
+    {"tag": "sendingMassage",
+     "patterns": ["send a message", "send a whatsapp message"],
+     "responses": [""]},
+
+    {"tag": "recognition",
+     "patterns": ["give me the name of this person", "recognize the person", "recognize the man in front of you",
+                  "recognize this woman", "identify", "scan"],
+     "responses": [""]}
+
+]}
