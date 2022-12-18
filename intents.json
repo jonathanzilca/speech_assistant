@@ -1,13 +1,20 @@
 {"intents": [
+  {"tag": "greeting",
+     "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "Hey", "greetings"],
+     "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"]},
 
-    {"tag": "goodbye",
-     "patterns": ["bye", "goodbye", "nighty night", "that's all for today", "shut down", "stop", "that's enough",
+  {"tag": "personality",
+     "patterns": ["what is your name", "who are you", "tell me your name", "tell me about your self"],
+     "responses": [""]},
+
+  {"tag": "goodbye",
+     "patterns": ["bye", "goodbye", "nightly night", "that's all for today", "shut down", "stop", "that's enough",
                   "see you next time", "not now", "i have to go", "see you soon", "shutdown"],
      "responses": ["Hope to see you soon Sir.", "I look forward to our next meeting Sir",
                    "It was nice to see you again Sir."
          , "Always nice to hear Sir.", "Have a nice day Sir.", "If you need anything, I am always here for you Sir."]},
 
-    {"tag": "caring",
+  {"tag": "caring",
      "patterns": ["how are you", "how do you feel", "how you doing", "how are you doing", "how do you do"],
      "responses": ["Somewhere between better and best.", "Much better now that you are with me.",
                    "My lawyer says I don’t have to answer that question.",
@@ -15,22 +22,67 @@
                    "If I were doing any better, I'd hire you to enjoy it with me.",
                    "If I were any better, I'd be illegal."]},
 
-    {"tag": "compliments",
+  {"tag": "compliments",
      "patterns": ["you are funny", "you're funny", "you are so funny", "you're so funny", "you are awesome",
                   "you're awesome", "you are adorable", "you're adorable", "you are the best"],
      "responses": ["Ha ha ha, thank you. I working on that."]},
 
-    {"tag": "telling_jokes",
-     "patterns": ["tell me a joke", "tell a joke", "tell me another", "cheer me up", "give me a joke"],
+  {"tag": "jokes",
+     "patterns": ["tell me a joke", "tell a joke", "tell me another joke", "cheer me up", "give me a joke"],
      "responses": [""]},
 
-    {"tag": "sendingMassage",
+  {"tag": "sendingMassage",
      "patterns": ["send a message", "send a whatsapp message"],
      "responses": [""]},
 
-    {"tag": "recognition",
+  {"tag": "watchMovie",
+     "patterns": ["I want to watch", "I want to see a movie", "play"],
+     "responses": [""]},
+
+  {"tag": "disneyRecommendation",
+     "patterns": ["recommend a disney movie", "command a disney movie", "suggest a disney movie", "what movie should i watch"],
+     "responses": [""]},
+
+  {"tag": "marvelRecommendation",
+     "patterns": ["recommend marvel movie", "command marvel movie", "suggest marvel movie"],
+     "responses": [""]},
+
+  {"tag": "faceRecognition",
      "patterns": ["give me the name of this person", "recognize the person", "recognize the man in front of you",
                   "recognize this woman", "identify", "scan"],
-     "responses": [""]}
+     "responses": [""]},
 
+  {"tag": "wikipediaSearch",
+     "patterns": ["search in wikipedia"],
+     "responses": [""]},
+
+  {"tag": "openBrowser",
+     "patterns": ["open google", "open youtube", "open facebook", "open disney plus", "open amazon", "open ebay", "open morfix"],
+     "responses": [""]},
+
+  {"tag": "openGmail",
+     "patterns": ["open gmail", "open email", "open my email", "open my gmail", "show gmail", "show email", "show my email", "show my gmail"],
+     "responses": [""]},
+
+  {"tag": "whatsApp",
+     "patterns": ["open whatsapp", "display messages", "display whatsapp messages", "display my whatsapp messages",
+       "display message", "display whatsapp message", "display a message", "display on messages", "show me the messages","show me my messages",
+       "show messages", "play my messages"],
+     "responses": [""]},
+
+  {"tag": "googleSearch",
+     "patterns": ["search"],
+     "responses": [""]},
+
+  {"tag": "youtubeSearch",
+     "patterns": ["search in youtube"],
+     "responses": [""]},
+
+  {"tag": "weatherSearch",
+     "patterns": ["what is the weather in", "is it cold in", "is it warm in", "is it rainy in", "is it sunny in"],
+     "responses": [""]},
+
+  {"tag": "Alarm",
+     "patterns": ["wake me up at", "set an alarm", "remind me to"],
+     "responses": [""]}
 ]}
