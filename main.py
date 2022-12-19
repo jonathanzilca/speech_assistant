@@ -1,3 +1,4 @@
+import spotipy
 from neuralintents import GenericAssistant
 import difflib
 import glob
@@ -18,6 +19,7 @@ import requests
 import re
 import datetime
 import functions
+import spotifyFun
 from re import match
 
 #########################################static information and small databases#########################################
@@ -29,17 +31,19 @@ jokes = [["Why shouldn't you write with a broken pencil?", "Because it's pointle
          ["Why did the picture go to jail?", "because it was framed."],
          ["Did you sit on the F5 key?", "Because your ass is refreshing!"],
          ["I wish the corona virus started in Las Vegas", "Because what happens in Vegas stays in Vegas"],
-         ["I told my wife she was drawing her eyebrows too high", "She looked surprised"]]
+         ["I told my wife she was drawing her eyebrows too high", "She looked surprised"],
+         ["Why does Santa have such a big sack", "because he only comes once a year"]]
 
 random.shuffle(jokes)
 jokes_counter = 0
 
-send_url = "http://api.ipstack.com/check?access_key=2a0a4487b2bdee553fa34672568b5935"
+send_url = "http://api.ipstack.com/check?access_key=6dc8f57da3ce67485215976e6c3ea07d"
 geo_req = requests.get(send_url)
 geo_json = json.loads(geo_req.text)
 currentLocation = geo_json['city'] + ", " + geo_json['country_name']
 
 robot_name = "jarvis"
+
 
 
 #########################################static information and small databases######################################
@@ -55,13 +59,13 @@ def robot_say(audio_string):
 def take_command():
     with speech_recognition.Microphone() as mic:
         speech_recognition.Recognizer().adjust_for_ambient_noise(mic, duration=0.2)
-        audio = speech_recognition.Recognizer().listen(mic)
+        audio = speech_recognition.Recognizer().listen(mic, 7, 7)
 
         try:
             command = speech_recognition.Recognizer().recognize_google(audio)
             print("You: {}".format(command))
         except speech_recognition.UnknownValueError:
-            return "meow"
+            return "fdgdf"
         except speech_recognition.RequestError:
             functions.robot_say("Sorry, my speech service is down")
 
@@ -72,6 +76,19 @@ def personality():
     global robot_name
     robot_say("I am a virtual assistant named " + str(robot_name).upper() + " which was designed by Jonathan.")
     robot_say("I am here to make everyone's life easier and better.")
+
+
+def greeting():
+    hour = int(datetime.datetime.now().hour)
+    if 0 <= hour < 12:
+        robot_say("Good Morning Sir")
+
+    elif 12 <= hour < 18:
+        robot_say("Good Afternoon Sir")
+
+    else:
+        robot_say("Good Evening Sir")
+    robot_say("I am at your service. How can I help you?")
 
 
 def tellJokes():
@@ -173,6 +190,7 @@ def sendingMassage():
 
 
 def watchMovie():
+    global request
     which_movie = ""
     movies_path = glob.glob("D:\\MOVIES\**\*\*\*.mp4", recursive=True) + \
                   glob.glob("D:\\MOVIES\**\*\*\*.mkv", recursive=True) + \
@@ -202,7 +220,7 @@ def watchMovie():
         elif "leave" in approve or "exit" in approve or "get out" in approve or "shut" in approve or "zip" in approve or "fuck off" in approve:
             robot_say("It's hard for me to find your movie. Sorry.")
             break
-        elif "meow" in approve:
+        elif "fdgdf" in approve:
             robot_say("I can't hear you")
             previous_movie.terminate()
             continue
@@ -256,6 +274,7 @@ def marvelRecommendation():
 
 
 def Alarm():
+    global request
     num = [int(s) for s in re.findall(r'\b\d+\b', request)]
     if len(num) == 1:
         alarm_min = 0
@@ -269,7 +288,7 @@ def Alarm():
         alarm_hour = num[0]
 
     # calculate for how long should the bot sleep
-    while alarm_min > 59 or alarm_hour > 24 or len(num) >= 3:
+    while alarm_min > 59 or alarm_hour > 24 or len(num) >= 3 or len(num) <= 0:
         robot_say("when Sir?")
         body_time = take_command()
         num = [int(s) for s in re.findall(r'\b\d+\b', body_time)]
@@ -425,6 +444,7 @@ def faceRecognition():
 
 
 def wikipediaSearch():
+    global request
     try:
         search_subject = request.split("wikipedia")[1]
         robot_say("Searching in Wikipedia...")
@@ -435,6 +455,7 @@ def wikipediaSearch():
 
 
 def openBrowser():
+    global request
     get_website = request.split("open ")[1]
     website_name_path = get_website.replace(" ", "")
     url = website_name_path + ".com"
@@ -455,6 +476,7 @@ def whatsApp():
 
 
 def googleSearch():
+    global request
     what_to_search = request.split("google")[1]
     url = 'https://www.google.com/search?q='
     search_url = url + what_to_search
@@ -462,6 +484,7 @@ def googleSearch():
 
 
 def youtubeSearch():
+    global request
     what_to_search = request.split("youtube")[1]
     url = 'https://www.youtube.com/results?search_query='
     search_url = url + what_to_search
@@ -469,6 +492,7 @@ def youtubeSearch():
 
 
 def weatherSearch():
+    global request
     what_to_search = request.split("in ")[1]
     city_name = what_to_search
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + str(
@@ -529,7 +553,77 @@ def weatherSearch():
     webbrowser.open(search_url)
 
 
-mappings = {"sendingMassage": sendingMassage,
+def location():
+    try:
+        robot_say("You are in " + str(currentLocation) + ".")
+    except:
+        robot_say("I don't know. My location service is down.")
+
+
+def playSpotify():
+    spotifyFun.playSpotify()
+    time.sleep(2)
+    spotifyFun.playSpotify()
+
+
+def pauseSpotify():
+    spotifyFun.pauseSpotify()
+    time.sleep(2)
+    spotifyFun.pauseSpotify()
+
+
+def playSearchedSong():
+    global request
+    spotifyFun.playSpotify()
+    time.sleep(2)
+    spotifyFun.playSearchedSong(request)
+
+
+def nextSong():
+    spotifyFun.playSpotify()
+    time.sleep(2)
+    spotifyFun.nextSong()
+
+
+def previousSong():
+    spotifyFun.playSpotify()
+    time.sleep(2)
+    spotifyFun.previousSong()
+
+
+def conversation():
+    global request
+    while True:
+        try:
+            # request = take_command()
+            request = input("You: ")
+            respond = assistant.request(request)
+            if respond is None:
+                pass
+            else:
+                robot_say(respond)
+        except speech_recognition.UnknownValueError:
+            speech_recognition.Recognizer()
+
+
+def robotWaitingForCommand():
+    while True:
+        try:
+            record_waking_command = take_command()
+            command_options = ["hi", "days home", "daddy's home", "hey ", robot_name,
+                               "hello", "good morning", "good evening", "I'm back"]
+            for robot in command_options:
+                if robot in record_waking_command:
+                    greeting()
+                    conversation()
+            else:
+                pass
+        except speech_recognition.UnknownValueError:
+            recognizer = speech_recognition.Recognizer()
+
+
+mappings = {"robotWaitingForCommand": robotWaitingForCommand,
+            "sendingMassage": sendingMassage,
             "watchMovie": watchMovie,
             "faceRecognition": faceRecognition,
             "wikipediaSearch": wikipediaSearch,
@@ -543,16 +637,16 @@ mappings = {"sendingMassage": sendingMassage,
             "marvelRecommendation": marvelRecommendation,
             "Alarm": Alarm,
             "personality": personality,
-            "jokes": tellJokes}
+            "jokes": tellJokes,
+            "playSpotify": playSpotify,
+            "pauseSpotify": pauseSpotify,
+            "playSearchedSong": playSearchedSong,
+            "nextSong": nextSong,
+            "previousSong": previousSong,
+            "location": location}
 
 assistant = GenericAssistant('new.json', mappings)
-assistant.train_model()
+assistant.load_model()
+request = ""
 
-while True:
-    try:
-        # request = take_command()
-        request = input("You: ")
-        respond = assistant.request(request)
-        robot_say(respond)
-    except speech_recognition.UnknownValueError:
-        recognizer = speech_recognition.Recognizer()
+robotWaitingForCommand()
