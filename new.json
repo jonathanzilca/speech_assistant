@@ -1,0 +1,147 @@
+{"intents": [
+  {"tag": "greeting",
+     "patterns": ["hi", "how are you", "is anyone there", "hello", "good day", "whats up", "hey", "greetings", "days home", "daddy's home", "good morning", "good evening", "I'm back"],
+     "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"]},
+
+  {"tag": "personality",
+     "patterns": ["what is your name", "who are you", "tell me your name", "tell me about your self"],
+     "responses": [""]},
+
+  {"tag": "changeRobotName",
+     "patterns": ["change your name", "give you new name", "give you new nickname", "tell me about your self"],
+     "responses": [""]},
+
+   {"tag": "nothing",
+     "patterns": ["fdgdf"],
+     "responses": ["I can't hear you", "I didn't get your command","please repeat"]},
+
+   {"tag": "isOn",
+     "patterns": ["are you there", "are you on"],
+     "responses": ["at your service sir"]},
+
+  {"tag": "robotWaitingForCommand",
+     "patterns": ["bye", "goodbye", "nightly night", "that's all for today", "shut down", "stop", "that's enough",
+                  "see you next time", "not now", "i have to go", "see you soon", "shutdown", "don't wait for me"],
+     "responses": ["Hope to see you soon Sir.", "I look forward to our next meeting Sir",
+                   "It was nice to see you again Sir."
+         , "Always nice to hear Sir.", "Have a nice day Sir.", "If you need anything, I am always here for you Sir."]},
+
+  {"tag": "caring",
+     "patterns": ["how are you", "how do you feel", "how you doing", "how are you doing", "how do you do"],
+     "responses": ["Somewhere between better and best.", "Much better now that you are with me.",
+                   "My lawyer says I don’t have to answer that question.",
+                   "Like you, but better.", "I'd say I'm a 10 out of 10.",
+                   "If I were doing any better, I'd hire you to enjoy it with me.",
+                   "If I were any better, I'd be illegal."]},
+
+  {"tag": "compliments",
+     "patterns": ["you are funny", "you're funny", "you are so funny", "you're so funny", "you are awesome",
+                  "you're awesome", "you are adorable", "you're adorable", "you are the best"],
+     "responses": ["Ha ha ha, thank you. I working on that."]},
+
+  {"tag": "jokes",
+     "patterns": ["tell me a joke", "tell a joke", "tell me another joke", "cheer me up", "give me a joke"],
+     "responses": [""]},
+
+  {"tag": "sendingMassage",
+     "patterns": ["send a message", "send a whatsapp message"],
+     "responses": [""]},
+
+  {"tag": "watchMovie",
+     "patterns": ["I want to watch", "I want to see a movie", "i would like to watch", "I wanna watch", "I wanna see a movie"],
+     "responses": [""]},
+
+  {"tag": "movie_recommendation",
+     "patterns": ["recommend a disney movie", "command a disney movie", "suggest a disney movie", "which disney movie should i watch",
+       "recommend a marvel movie", "command a marvel movie", "suggest a marvel movie", "which marvel movie should i watch",
+       "recommend a movie", "command a movie", "suggest a movie", "which movie should i watch"],
+     "responses": [""]},
+
+  {"tag": "marvelRecommendation",
+     "patterns": [],
+     "responses": [""]},
+
+  {"tag": "faceRecognition",
+     "patterns": ["give me the name of this person", "recognize the person", "recognize the man in front of you",
+                  "recognize this woman", "identify", "scan"],
+     "responses": [""]},
+
+  {"tag": "wikipediaSearch",
+     "patterns": ["search in wikipedia", "searching Wikipedia"],
+     "responses": [""]},
+
+  {"tag": "openBrowser",
+     "patterns": ["open google", "open youtube", "open facebook", "open disney plus", "open amazon", "open ebay", "open morfix"],
+     "responses": [""]},
+
+  {"tag": "openGmail",
+     "patterns": ["open gmail", "open email", "open my email", "open my gmail", "show gmail", "show email", "show my email", "show my gmail"],
+     "responses": [""]},
+
+  {"tag": "whatsApp",
+     "patterns": ["open whatsapp", "display messages", "display whatsapp messages", "display my whatsapp messages",
+       "display message", "display whatsapp message", "display a message", "display on messages", "show me the messages","show me my messages",
+       "show messages", "play my messages"],
+     "responses": [""]},
+
+  {"tag": "googleSearch",
+     "patterns": ["search"],
+     "responses": [""]},
+
+  {"tag": "youtubeSearch",
+     "patterns": ["search in youtube"],
+     "responses": [""]},
+
+  {"tag": "weatherSearch",
+     "patterns": ["what is the weather in", "is it cold in", "is it warm in", "is it rainy in", "is it sunny in"],
+     "responses": [""]},
+
+  {"tag": "playSpotify",
+     "patterns": ["play music from spotify", "i want to hear music", "i would like to hear some music",
+       "i would like to listen to music", "play music","turn up the music", "turn up music"],
+     "responses": [""]},
+
+  {"tag": "pauseSpotify",
+     "patterns": ["pause music", "stop music"],
+     "responses": [""]},
+
+  {"tag": "playSearchedSong",
+     "patterns": ["play", "i want to hear", "i want to listen to"],
+     "responses": [""]},
+
+  {"tag": "nextSong",
+     "patterns": ["next"],
+     "responses": [""]},
+
+  {"tag": "previousSong",
+     "patterns": ["previous","previous song", "go back"],
+     "responses": [""]},
+
+  {"tag": "volumeDown",
+     "patterns": ["turn volume down", "volume down", "turn down volume ", "decrease the volume", "lower the volume"],
+     "responses": [""]},
+
+  {"tag": "volumeUp",
+     "patterns": ["turn volume up","volume up","turn up volume ","increase the volume", "raise the volume"],
+     "responses": [""]},
+
+  {"tag": "volumeMute",
+     "patterns": ["hush", "silence" ,"keep it down","quiet","mute","unmute","bring back volume"],
+     "responses": [""]},
+
+  {"tag": "setVolume",
+     "patterns": ["set volume to the"],
+     "responses": [""]},
+
+  {"tag": "movieMode",
+     "patterns": ["movie mode"],
+     "responses": [""]},
+
+  {"tag": "location",
+     "patterns": ["where am I", "what is my location", "get location", "what is this place"],
+     "responses": [""]},
+
+  {"tag": "Alarm",
+     "patterns": ["wake me up at", "set an alarm", "remind me to","i wanna wake up at"],
+     "responses": [""]}
+]}
